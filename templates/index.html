@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git user</title>
+    <link rel="stylesheet" href="/static/assets/css/style.css">
+</head>
+
+<body app-page="users">
+
+<header class="page-header">
+    <h3 class="h-title">GitHub Users</h3>
+</header>
+
+<main class="page-main">
+
+    <div class="pagination-button" id="pagination_btn_container">
+        {% if data["data"]|length > 0 %}
+            <ul class="pagination-button-list">
+                {% for x in range(1,total_pages + 1) %}
+                    <li class="p-button  {% if page_id == x %} active {% endif %} "><a class="p-link"
+                                                                                       href="{% if page_link == 'yes' %}
+                                                                                       /users/{{ x }}?pagination={{ pagination }}
+                                                                                        {% else %}
+                                                                                        /users/{{ x }}
+                                                                                        {% endif %}"
+                                                                                       data-default="false">{{ x }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <ul class="pagination-container" id="list_container">
+        {% if data["data"]|length > 0 %}
+            {% for x in data["data"] %}
+                <a class="pagination-item" href="https://github.com/{{ x['username'] }}">
+                    <div class="pagination-item-header">{{ x["id"] }} - {{ x["username"] }}</div>
+                    <div class="pagination-img"><img src="{{ x["avatar_url"] }}"></div>
+                </a>
+            {% endfor %}
+        {% else %}
+            <p>Data is empty</p>
+            <p>( Note : There are only {{ total_pages }} pages and {{ total_records }} records in the database. )</p>
+        {% endif %}
+
+    </ul>
+</main>
+
+<script src="/static/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/static/assets/js/main.js"></script>
+
+</body>
+
+</html>

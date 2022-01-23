@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    color: rgb(16, 16, 16);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.page-header {
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.page-header .h-title {
+    font-size: 1.8em;
+}
+
+/* Pagination button */
+.pagination-button {
+    padding: 0 0.5rem;
+}
+
+.pagination-button .pagination-button-list {
+    position: relative;
+    list-style: none;
+    display: flex;
+}
+
+li.p-button:first-child {
+    border-bottom-left-radius: 0.3rem;
+    border-top-left-radius: 0.3rem;
+}
+
+li.p-button:last-child {
+    border-bottom-right-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+}
+
+li.p-button {
+    margin: 0;
+    border: 0.5px solid #fdf9f9;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 0.3rem;
+    border-collapse: collapse;
+    transition: 100ms ease-in-out;
+}
+
+li.p-button a {
+    padding: inherit;
+    text-decoration: none;
+    color: #4d4df1;
+    cursor: pointer;
+}
+
+li.p-button.active,
+li.p-button:hover {
+    background-color: #4d4df1;
+}
+
+li.p-button.active a,
+li.p-button:hover a {
+    color: #fff;
+}
+
+
+/* Pagination container */
+.pagination-container {
+    position: relative;
+    padding: 1rem 2rem;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pagination-item {
+    min-width: 197px;
+    position: relative;
+    border: 1px solid #aaaaf3;
+    display: inline-block;
+    border-radius: 4px;
+    min-height: 180px;
+    margin: 0.5rem 1.5rem;
+    cursor: pointer;
+}
+
+.pagination-item-header {
+    padding: 0.8rem;
+    text-decoration: underline;
+    background-color: #4d4df1;
+    color: #fff;
+}
+
+.pagination-img {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.8rem;
+}
+
+.pagination-img img {
+    height: 137px;
+    width: 120px;
+    margin: auto;
+    border-radius: 4px 4px 0 0;
+    object-fit: cover;
+}
