@@ -1,6 +1,5 @@
 #!/bin/bash
 
-export FLASK_APP=app.py # your python file name
-set FLASK_APP = app.py
+export FLASK_APP=app # your python file name
 export FLASK_ENV=development
-flask run
+flask run --host=127.0.0.1
