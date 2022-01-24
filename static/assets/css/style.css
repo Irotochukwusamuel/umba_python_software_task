@@ -23,12 +23,15 @@ body {
 /* Pagination button */
 .pagination-button {
     padding: 0 0.5rem;
+    max-height: 150px;
+    overflow: auto;
 }
 
 .pagination-button .pagination-button-list {
     position: relative;
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
 }
 
 li.p-button:first-child {
