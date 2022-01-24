@@ -44,7 +44,13 @@ This Project uses an MVC Architecture. Model, View, Controller.
  - Root.py :
     This is just a file that holds the name of the database and table respectifully.
 
+
+## Project Tree
+
 ```bash
+
+
+
 ├── app
 │   ├── blueprints
 │   │   ├── **/api.py
